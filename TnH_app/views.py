@@ -18,3 +18,7 @@ def contact():
 @app.route("/cheesecakes/")
 def cheesecakes():
     return render_template("cheesecakes.html")
+
+@app.route("/macarons/")
+def cheesecakes():
+    return render_template("macarons.html")
