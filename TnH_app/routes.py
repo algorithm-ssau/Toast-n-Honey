@@ -7,13 +7,9 @@ from . import app
 def home():
     return render_template("home.html")
 
-@app.route("/about/")
-def about():
-    return render_template("about.html")
-
-@app.route("/contact/")
-def contact():
-    return render_template("contact.html")
+@app.route("/contacts/")
+def contacts():
+    return render_template("contacts.html")
 
 @app.route("/cheesecakes/")
 def cheesecakes():
@@ -22,3 +18,7 @@ def cheesecakes():
 @app.route("/cakes/")
 def cakes():
     return render_template("cakes.html")
+
+@app.route("/desserts/")
+def desserts():
+    return render_template("desserts.html")
