@@ -19,8 +19,8 @@ def cheesecakes():
 def cakes():
     return render_template("cakes.html")
 
- @app.route("/macarons/")
-def cakes():
+@app.route("/macarons/")
+def macarons():
     return render_template("macarons.html")
 
 @app.route("/desserts/")
