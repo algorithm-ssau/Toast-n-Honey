@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>dsdsf</title>
+    <title>{% block title1 %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.png')}}" />
     {% assets "css_all" %}
@@ -27,22 +27,22 @@
                 <div class="wrap_menu">
                     <nav class="menu">
                         <ul class="main_menu">
-							<li>
-								<a href="{{ url_for('cakes') }}">Торты</a>
-							</li>
-							<li>
-								<a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
-							</li>
-							<li>
-								<a href="{{ url_for('macarons') }}">Макарон</a>
-							</li>
-							<li>
-								<a href="{{ url_for('desserts') }}">Десерты</a>
-							</li>
-							<li>
-								<a href="{{ url_for('contacts') }}">Контакты</a>
-							</li>
-						</ul>
+                            <li>
+                                <a href="{{ url_for('cakes') }}">Торты</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('macarons') }}">Макарон</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('desserts') }}">Десерты</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('contacts') }}">Контакты</a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>
@@ -50,16 +50,239 @@
     </header>
 
     <!-- Title Page -->
-    <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({{ url_for('static', filename='images/heading-pages-02.jpg')}});">
-		<h2 class="l-text2 t-center">
-			{% block title %}{% endblock %}
-		</h2>
-	</section>
+    <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m"
+        style="background-image: url({{ url_for('static', filename='images/heading-pages-02.jpg')}});">
+        <h2 class="l-text2 t-center">
+            {% block title2 %}{% endblock %}
+        </h2>
+    </section>
 
     <!-- Content page -->
     <section class="bgwhite p-t-65 p-b-65 flex-col-c-m">
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            <!-- Products -->
+            <div class="row">
+                <div class="col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Herschel supply co 25l
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $75.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Herschel supply co 25l
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $75.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Denim jacket blue
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $92.50
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Herschel supply co 25l
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $75.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Herschel supply co 25l
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $75.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Herschel supply co 25l
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $75.00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Denim jacket blue
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $92.50
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                            <div class="block2-overlay trans-0-4">
+                                <div class="block2-btn-addcart w-size1 trans-0-4">
+                                    <!-- Button -->
+                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block2-txt p-t-20">
+                            <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                                Denim jacket blue
+                            </a>
+
+                            <span class="block2-price m-text6 p-r-5">
+                                $92.50
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -74,10 +297,10 @@
                 96 716 6879
             </div>
 
-            <div class="t-center p-t-10">
-                <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-            </div>
+            <!--<div class="t-center p-t-10">
+                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
+                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
+            </div>-->
 
             <div class="t-center s-text8 p-t-30">
                 Copyright © 2020 All rights reserved.
@@ -100,7 +323,7 @@
         $('.block2-btn-addcart').each(function () {
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
             $(this).on('click', function () {
-                window.open('product-detail.html');
+                //window.open('{{ url_for('home') }}');
             });
         });
     </script>
