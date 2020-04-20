@@ -16,36 +16,3 @@ class Options(db.Model):
 
     def __repr__(self):
         return '<Option %d: ProductID: %d, Price: %d, Weight: %d, Amount: %d>' % (self.OptionId, self.ProductId, self.Price, self.Weight, self.Amount)
-
-
-class Customers(db.Model):
-    id = db.Column(db.INTEGER, primary_key=True)       
-    Name = (db.NVARCHAR(100), nullable=False)
-    Phone = (db.NVARCHAR(11), nullable=False)
-    Email = (db.NVARCHAR(100))
-
-    def __init__(self, Name, Phone, Email):        
-        self.id = id
-        self.Name = Name
-        self.Phone = Phone
-        self.Email = Email
-
-    def __repr__(self):
-        return "<Customers %i: Name - %c, Phone - %c, Email - %c>" % (self.id, self.Name, self.Phone, self.Email)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
