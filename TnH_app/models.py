@@ -15,4 +15,4 @@ class Options(db.Model):
         self.Amount = Amount
 
     def __repr__(self):
-        return '<Option %d: ProductID: %d, Price: %d, Weight: %d, Amount: %d>' % (self.OptionId, self.ProductId, self.Price, self.Weight, self.Amount)
+        return '<Option %d: ProductID: %d, Price: %d, Weight: %d, Amount: %d>' % (self.id, self.productId, self.price, self.weight, self.amount)
