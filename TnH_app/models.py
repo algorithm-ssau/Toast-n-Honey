@@ -20,9 +20,9 @@ class Options(db.Model):
 
 class Customers(db.Model):
     id = db.Column(db.INTEGER, primary_key=True)       
-    Name = db.Column(db.NVARCHAR(100), nullable = False)
-    Phone = db.Column(db.NVARCHAR(11), nullable = False)
-    Email = db.Column(db.NVARCHAR(100))
+    Name = (db.NVARCHAR(100), nullable=False)
+    Phone = (db.NVARCHAR(11), nullable=False)
+    Email = (db.NVARCHAR(100))
 
     def __init__(self, Name, Phone, Email):        
         self.id = id
