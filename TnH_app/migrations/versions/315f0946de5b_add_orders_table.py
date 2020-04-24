@@ -1,4 +1,4 @@
-"""empty message
+"""add orders table
 
 Revision ID: 315f0946de5b
 Revises: 
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 # revision identifiers, used by Alembic.
 revision = '315f0946de5b'
-down_revision = None
+down_revision = '21d2ff0a8680'
 branch_labels = None
 depends_on = None
 
