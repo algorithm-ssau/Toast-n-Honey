@@ -66,3 +66,15 @@ class Products(db.Model):
     def __repr__(self):
         return '<Product %d: TypeID: %d, Name: %c, Description: %c, Photo: %c>' % (self.id, self.typeId, self.name, self.description, self.photo)
 
+
+class Types(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.NVARCHAR(100), nullable=False)
+
+    products = db.relationship('products', backref='types', lazy=True)
+
+    def __init__(self, Title):
+        self.Title = Title
+
+    def __repr__(self):
+        return '<Type %d: Title: %c>' % (self.id, self.title)
