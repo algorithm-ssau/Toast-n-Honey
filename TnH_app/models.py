@@ -23,6 +23,8 @@ class Options(db.Model):
     weight = db.Column(db.Integer)
     amount = db.Column(db.Integer)
 
+    orders = db.relationship('orders', backref='options', lazy=True)
+
     def __init__(self, ProductId, Price, Weight, Amount):
         self.ProductId = ProductId
         self.Price = Price
@@ -32,11 +34,14 @@ class Options(db.Model):
     def __repr__(self):
         return '<Option %d: ProductID: %d, Price: %d, Weight: %d, Amount: %d>' % (self.id, self.productId, self.price, self.weight, self.amount)
 
+
 class Customers(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.NVARCHAR(100), nullable=False)
     phone = db.Column(db.NVARCHAR(10), nullable=False)
-    email= db.Column(db.NVARCHAR(100))
+    email = db.Column(db.NVARCHAR(100))
+
+    orders = db.relationship('orders', backref='customers', lazy=True)
 
     def __init__(self, Name, Phone, Email):
         self.Name = Name
