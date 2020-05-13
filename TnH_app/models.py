@@ -45,3 +45,24 @@ class Customers(db.Model):
 
     def __repr__(self):
         return '<Customer %d: Name: %c, Phone: %c, Email: %c>' % (self.id, self.Name, self.Phone, self.Email)
+
+
+class Products(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    typeId = db.Column(db.Integer, db.ForeignKey('types.id'), nullable=False)
+    name = db.Column(db.NVARCHAR(100), nullable=False)
+    description = db.Column(db.NVARCHAR(500), nullable=True)
+    photo = db.Column(db.NVARCHAR(100), nullable=True)
+
+    options = db.relationship('options', backref='products', lazy=True)
+    orders = db.relationship('orders', backref='products', lazy=True)
+
+    def __init__(self, TypeId, Name, Description, Photo):
+        self.TypeId = TypeId
+        self.Name = Name
+        self.Description = Description
+        self.Photo = Photo
+
+    def __repr__(self):
+        return '<Product %d: TypeID: %d, Name: %c, Description: %c, Photo: %c>' % (self.id, self.typeId, self.name, self.description, self.photo)
+
