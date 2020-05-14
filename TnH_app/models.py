@@ -37,9 +37,9 @@ class Options(db.Model):
 
 class Customers(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.NVARCHAR(100), nullable=False)
-    phone = db.Column(db.NVARCHAR(10), nullable=False)
-    email = db.Column(db.NVARCHAR(100))
+    Name = db.Column(db.NVARCHAR(100), nullable=False)
+    Phone = db.Column(db.NVARCHAR(10), nullable=False)
+    Email = db.Column(db.NVARCHAR(100))
 
     orders = db.relationship('orders', backref='customers', lazy=True)
 
