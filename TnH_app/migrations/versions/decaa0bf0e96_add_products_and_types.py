@@ -32,9 +32,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['typeId'], ['types.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.add_column('customers', sa.Column('email', sa.NVARCHAR(length=100), nullable=True))
-    op.add_column('customers', sa.Column('name', sa.NVARCHAR(length=100), nullable=False))
-    op.add_column('customers', sa.Column('phone', sa.NVARCHAR(length=10), nullable=False))
     op.create_foreign_key(None, 'options', 'products', ['productId'], ['id'])
     op.create_foreign_key(None, 'orders', 'products', ['productId'], ['id'])
     # ### end Alembic commands ###
