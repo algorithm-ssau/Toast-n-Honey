@@ -1,31 +1,236 @@
-{% extends "product_layout.html" %}
-{% block title1 %}
+{% extends "products_layout.html" %}
+{% block products_title1 %}
 Торты
 {% endblock %}
-{% block title2 %}
+{% block products_title2 %}
 Торты
 {% endblock %}
-{% block content %}
-<h4>What is cake?</h4>
-<p>Cake is a form of sweet food made from flour, sugar, and other ingredients, that is usually baked. In their oldest
-    forms, cakes were modifications of bread, but cakes now cover a wide range of preparations that can be simple or
-    elaborate, and that share features with other desserts such as pastries, meringues, custards, and pies.</p>
-<p>Cake is often served as a celebratory dish on ceremonial occasions, such as weddings, anniversaries, and birthdays.
-    There are countless cake recipes; some are bread-like, some are rich and elaborate, and many are centuries old. Cake
-    making is no longer a complicated procedure; while at one time considerable labor went into cake making
-    (particularly the whisking of egg foams), baking equipment and directions have been simplified so that even the most
-    amateur of cooks may bake a cake.</p>
-<h4>History</h4>
-<p>The term "cake" has a long history. The word itself is of Viking origin, from the Old Norse word "kaka".</p>
-<p>The ancient Greeks called cake πλακοῦς (plakous), which was derived from the word for "flat". It
-    was baked using flour mixed with eggs, milk, nuts, and honey. They also had a cake called "satura", which was a flat
-    heavy cake. During the Roman period, the name for cake became "placenta" which was derived from the Greek term. A
-    placenta was baked on a pastry base or inside a pastry case.</p>
-<p>The Greeks invented beer as a leavener, frying fritters in olive oil, and cheesecakes using goat's milk. In ancient
-    Rome, the basic bread dough was sometimes enriched with butter, eggs, and honey, which produced a sweet and
-    cake-like baked good.Latin poet Ovid refers to his and his brother's birthday party and cake in his first book of
-    exile, Tristia. Early cakes in England were also essentially bread: the most obvious differences between a "cake"
-    and "bread" were the round, flat shape of the cakes, and the cooking method, which turned cakes over once while
-    cooking, while bread was left upright throughout the baking process. Sponge cakes, leavened with beaten eggs,
-    originated during the Renaissance, possibly in Spain.</p>
+{% block products_content %}
+<!-- Content page -->
+<section class="bgwhite p-t-65 p-b-65 flex-col-c-m">
+    <div class="container">
+        <!-- Products -->
+        <div class="row">
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

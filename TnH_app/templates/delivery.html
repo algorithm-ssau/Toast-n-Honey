@@ -1,132 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Доставка</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.png')}}" />
-    {% assets "css_all" %}
-    <link rel="stylesheet" href="{{ ASSET_URL }}">
-    {% endassets %}
-
-</head>
-
-<body class="animsition">
-
-    <!-- Header -->
-    <header class="header1">
-        <!-- Header desktop -->
-        <div class="container-menu-header">
-            <div class="wrap_header">
-                <!-- Logo -->
-                <a href="{{ url_for('home') }}" class="logo">
-                    <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
-                </a>
-
-                <!-- Menu -->
-                <div class="wrap_menu">
-                    <nav class="menu">
-                        <ul class="main_menu">
-                            <li>
-                                <a href="{{ url_for('cakes') }}">Торты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('macarons') }}">Макарон</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('desserts') }}">Десерты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('contacts') }}">Контакты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('delivery') }}">Доставка</a>
-                            </li>
-                        </ul>
-                    </nav>
+{% extends "layout.html" %}
+{% block title %}
+Доставка
+{% endblock %}
+{% block content %}
+<section class="bgwhite p-t-66 p-b-38">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 p-b-30">
+                <div class="hov-img-zoom">
+                    <img src="{{ url_for('static', filename='images/banner-14.jpg')}}" alt="IMG-ABOUT">
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- Title Page
-	 <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-06.jpg);">
-		<h2 class="l-text2 t-center">
-			About
-		</h2>
-	</section> -->
+            <div class="col-md-8 p-b-30">
+                <h3 class="m-text26 p-t-15 p-b-16">
+                    Our story
+                </h3>
 
-    <!-- content page -->
-    <section class="bgwhite p-t-66 p-b-38">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 p-b-30">
-                    <div class="hov-img-zoom">
-                       <img src="{{ url_for('static', filename='images/banner-14.jpg')}}" alt="IMG-ABOUT">
-                    </div>
-                </div>
-
-                <div class="col-md-8 p-b-30">
-                    <h3 class="m-text26 p-t-15 p-b-16">
-                        Our story
-                    </h3>
-
-                    <p class="p-b-28">
-                        Phasellus egestas nisi nisi, lobortis ultricies risus semper nec. Vestibulum pharetra ac ante ut
-                        pellentesque. Curabitur fringilla dolor quis lorem accumsan, vitae molestie urna dapibus.
-                        Pellentesque porta est ac neque bibendum viverra. Vivamus lobortis magna ut interdum laoreet.
-                        Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam
-                        aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci
-                        ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus
-                        sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt
-                        erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et
-                        maximus enim ligula ac ligula. Vivamus tristique vulputate ultricies. Sed vitae ultrices orci.
-                    </p>
-                </div>
+                <p class="p-b-28">
+                    Phasellus egestas nisi nisi, lobortis ultricies risus semper nec. Vestibulum pharetra ac ante ut
+                    pellentesque. Curabitur fringilla dolor quis lorem accumsan, vitae molestie urna dapibus.
+                    Pellentesque porta est ac neque bibendum viverra. Vivamus lobortis magna ut interdum laoreet.
+                    Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam
+                    aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci
+                    ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus
+                    sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt
+                    erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et
+                    maximus enim ligula ac ligula. Vivamus tristique vulputate ultricies. Sed vitae ultrices orci.
+                </p>
             </div>
         </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
-        <div class="t-center p-l-15 p-r-15">
-            <h4 class="t-center s-text12 p-b-5">
-                GET IN TOUCH
-            </h4>
-
-            <div class="t-center s-text8 p-t-5">
-                Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1)
-                96 716 6879
-            </div>
-
-            <!--<div class="t-center p-t-10">
-                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-            </div>-->
-
-            <div class="t-center s-text8 p-t-30">
-                Copyright © 2018 All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- Back to top -->
-    <div class="btn-back-to-top bg0-hov" id="myBtn">
-        <span class="symbol-btn-back-to-top">
-            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-        </span>
     </div>
-
-    {% assets "js_all" %}
-    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-    {% endassets %}
-
-</body>
-
-</html>
+</section>
+{% endblock %}

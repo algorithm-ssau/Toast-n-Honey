@@ -1,31 +1,236 @@
-{% extends "product_layout.html" %}
-{% block title1 %}
+{% extends "products_layout.html" %}
+{% block products_title1 %}
 Чизкейки
 {% endblock %}
-{% block title2 %}
+{% block products_title2 %}
 Чизкейки
 {% endblock %}
-{% block content %}
-<p>This page about Cheesecakes.</p>
-<p>The first “cheese cake” may have been created on the Greek island of Samos. Physical anthropologists excavated cheese molds there which were
-    dated circa 2,000 B.C. Cheese and cheese products had most likely been around for thousands of years before this, but earlier than this goes into
-    prehistory (that period in human history before the invention of writing) so we will never really know. In Greece, cheesecake was considered to be a
-    good source of energy, and there is evidence that it was served to athletes during the first Olympic games in 776 B.C. Greek brides and grooms were
-    also known to use cheesecake as a wedding cake. The simple ingredients of flour, wheat, honey and cheese were formed into a cake and baked – a
-    far cry from the more complicated recipes available today!</p>
-<p>The writer Athenaeus is credited for writing the first Greek cheesecake recipe in 230 A.D. (By this time, the Greeks had been serving cheesecake for
-    over 2,000 years but this is the oldest known surviving Greek recipe!) It was also pretty basic - pound the cheese until it is smooth and pasty - mix the
-    pounded cheese in a brass pan with honey and spring wheat flour - heat the cheese cake “in one mass” - allow to cool then serve.</p>
-<p>When the Romans conquered Greece, the cheesecake recipe was just one spoil of war. They modified it including crushed cheese and eggs. These
-    ingredients were baked under a hot brick and it was served warm. Occasionally, the Romans would put the cheese filling in a pastry. The Romans
-    called their cheese cake “libuma” and they served it on special occasions. Marcus Cato, a Roman politician in the first century B.C., is credited as
-    recording the oldest known Roman cheesecake recipe.</p>
-<p>As the Romans expanded their empire, they brought cheesecake recipes to the Europeans. Great Britain and Eastern Europe began experimenting
-    with ways to put their own unique spin on cheesecake. In each country of Europe, the recipes started taking on different cultural shapes, using
-    ingredients native to each region. In 1545, the first cookbook was printed. It described the cheesecake as a flour-based sweet food. Even Henry VIII’s
-    chef did his part to shape the cheesecake recipe. Apparently, his chef cut up cheese into very small pieces and soaked those pieces in milk for three
-    hours. Then, he strained the mixture and added eggs, butter and sugar.</p>
-<p>It was not until the 18th century, however, that cheesecake would start to look like something we recognize in the United States today. Around this
-    time, Europeans began to use beaten eggs instead of yeast to make their breads and cakes rise. Removing the overpowering yeast flavor made
-    cheesecake taste more like a dessert treat. When Europeans immigrated to America, some brought their cheesecake recipes along. </p>
+{% block products_content %}
+<!-- Content page -->
+<section class="bgwhite p-t-65 p-b-65 flex-col-c-m">
+    <div class="container">
+        <!-- Products -->
+        <div class="row">
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Herschel supply co 25l
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $75.00
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                        <img src="{{ url_for('static', filename='images/gallery-01.jpg')}}" alt="IMG-PRODUCT">
+
+                        <div class="block2-overlay trans-0-4">
+                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                <!-- Button -->
+                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <a href="{{ url_for('details') }}" style="color: white;">Подробнее</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block2-txt p-t-20">
+                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            Denim jacket blue
+                        </a>
+
+                        <span class="block2-price m-text6 p-r-5">
+                            $92.50
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

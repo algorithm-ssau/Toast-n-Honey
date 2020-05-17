@@ -1,241 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Toast And Honey</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.png')}}" />
-    {% assets "css_all" %}
-    <link rel="stylesheet" href="{{ ASSET_URL }}">
-    {% endassets %}
-</head>
-
-<body class="animsition">
-
-    <!-- Header -->
-    <header class="header1">
-        <!-- Header desktop -->
-        <div class="container-menu-header">
-            <div class="wrap_header">
-                <!-- Logo -->
-                <a href="{{ url_for('home') }}" class="logo">
-                    <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
-                </a>
-
-                <!-- Menu -->
-                <div class="wrap_menu">
-                    <nav class="menu">
-                        <ul class="main_menu">
-                            <li>
-                                <a href="{{ url_for('cakes') }}">Торты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('macarons') }}">Макарон</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('desserts') }}">Десерты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('contacts') }}">Контакты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('delivery') }}">Доставка</a>
-                            </li>
-                        </ul>
-                    </nav>
+{% extends "layout.html" %}
+{% block title %}
+Toast And Honey
+{% endblock %}
+{% block content %}
+<section class="slide1">
+    <div class="wrap-slick1">
+        <div class="slick1">
+            <div class="item-slick1 item1-slick1"
+                style="background-image: url({{ url_for('static', filename='images/master-slide-02.jpg')}});">
+                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- Slide1 -->
-    <section class="slide1">
-        <div class="wrap-slick1">
-            <div class="slick1">
-                <div class="item-slick1 item1-slick1"
-                    style="background-image: url({{ url_for('static', filename='images/master-slide-02.jpg')}});">
-                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    </div>
+            <div class="item-slick1 item2-slick1"
+                style="background-image: url({{ url_for('static', filename='images/master-slide-03.jpg')}});">
+                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                 </div>
-
-                <div class="item-slick1 item2-slick1"
-                    style="background-image: url({{ url_for('static', filename='images/master-slide-03.jpg')}});">
-                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    </div>
-                </div>
-
-                <div class="item-slick1 item3-slick1"
-                    style="background-image: url({{ url_for('static', filename='images/master-slide-04.jpg')}});">
-                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    </div>
-                </div>
-
             </div>
+
+            <div class="item-slick1 item3-slick1"
+                style="background-image: url({{ url_for('static', filename='images/master-slide-04.jpg')}});">
+                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Banner -->
-    <section class="banner bgwhite p-t-40 p-b-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
+<!-- Banner -->
+<section class="banner bgwhite p-t-40 p-b-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
 
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="{{ url_for('cakes') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                                Торты
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
-
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="{{ url_for('desserts') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                                Десерты
-                            </a>
-                        </div>
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{ url_for('cakes') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            Торты
+                        </a>
                     </div>
                 </div>
 
-                <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
 
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="{{ url_for('cheesecakes') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                                Чизкейки
-                            </a>
-                        </div>
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{ url_for('desserts') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            Десерты
+                        </a>
                     </div>
+                </div>
+            </div>
 
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
 
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="{{ url_for('home') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                                Праздник
-                            </a>
-                        </div>
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{ url_for('cheesecakes') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            Чизкейки
+                        </a>
                     </div>
                 </div>
 
-                <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
 
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="{{ url_for('macarons') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                                Макарон
-                            </a>
-                        </div>
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{ url_for('home') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            Праздник
+                        </a>
                     </div>
+                </div>
+            </div>
 
-                    <!-- block2 -->
-                    <div class="block2 wrap-pic-w pos-relative m-b-30">
-                        <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG">
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG-BENNER">
 
-                        <div class="block2-content sizefull ab-t-l flex-col-c-m">
-                            <h4 class="m-text4 t-center w-size3 p-b-8">
-                                Sign up & get 20% off
-                            </h4>
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{ url_for('macarons') }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            Макарон
+                        </a>
+                    </div>
+                </div>
 
-                            <p class="t-center w-size4">
-                                Be the frist to know about the latest fashion news and get exclu-sive offers
-                            </p>
-                        </div>
+                <!-- block2 -->
+                <div class="block2 wrap-pic-w pos-relative m-b-30">
+                    <img src="{{ url_for('static', filename='images/icons/bg-01.jpg')}}" alt="IMG">
+
+                    <div class="block2-content sizefull ab-t-l flex-col-c-m">
+                        <h4 class="m-text4 t-center w-size3 p-b-8">
+                            Sign up & get 20% off
+                        </h4>
+
+                        <p class="t-center w-size4">
+                            Be the frist to know about the latest fashion news and get exclu-sive offers
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Shipping -->
-    <section class="shipping bgwhite p-t-62 p-b-46">
-        <div class="flex-w p-l-15 p-r-15">
-            <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
-                <h4 class="m-text12 t-center">
-                    Free Delivery Worldwide
-                </h4>
-
-                <a href="{{ url_for('home') }}" class="s-text11 t-center">
-                    Click here for more info
-                </a>
-            </div>
-
-            <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
-                <h4 class="m-text12 t-center">
-                    30 Days Return
-                </h4>
-
-                <span class="s-text11 t-center">
-                    Simply return it within 30 days for an exchange.
-                </span>
-            </div>
-
-            <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
-                <h4 class="m-text12 t-center">
-                    Store Opening
-                </h4>
-
-                <span class="s-text11 t-center">
-                    Shop open from Monday to Sunday
-                </span>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
-        <div class="t-center p-l-15 p-r-15">
-            <h4 class="t-center s-text12 p-b-5">
-                GET IN TOUCH
+<!-- Shipping -->
+<section class="shipping bgwhite p-t-62 p-b-46">
+    <div class="flex-w p-l-15 p-r-15">
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Free Delivery Worldwide
             </h4>
 
-            <div class="t-center s-text8 p-t-5">
-                Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1)
-                96 716 6879
-            </div>
-
-            <!--<div class="t-center p-t-10">
-                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-            </div>-->
-
-            <div class="t-center s-text8 p-t-30">
-                Copyright © 2018 All rights reserved.
-            </div>
+            <a href="{{ url_for('home') }}" class="s-text11 t-center">
+                Click here for more info
+            </a>
         </div>
-    </footer>
 
-    <!-- Back to top -->
-    <div class="btn-back-to-top bg0-hov" id="myBtn">
-        <span class="symbol-btn-back-to-top">
-            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-        </span>
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
+            <h4 class="m-text12 t-center">
+                30 Days Return
+            </h4>
+
+            <span class="s-text11 t-center">
+                Simply return it within 30 days for an exchange.
+            </span>
+        </div>
+
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Store Opening
+            </h4>
+
+            <span class="s-text11 t-center">
+                Shop open from Monday to Sunday
+            </span>
+        </div>
     </div>
-
-    {% assets "js_all" %}
-    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-    {% endassets %}
-
-</body>
-
-</html>
+</section>
+{% endblock %}
