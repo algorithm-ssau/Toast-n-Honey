@@ -31,3 +31,8 @@ def macarons():
 @app.route("/desserts/")
 def desserts():
     return render_template("desserts.html")
+
+
+@app.route("/delivery/")
+def delivery():
+    return render_template("delivery.html")
