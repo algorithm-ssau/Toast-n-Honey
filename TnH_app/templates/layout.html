@@ -1,28 +1,105 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
-    </head>
+<html lang="en">
 
-    <body>
-        <div class="navbar">
-            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-            <a href="{{ url_for('cakes') }}" class="navbar-item">Cakes</a>
-            <a href="{{ url_for('cheesecakes') }}" class="navbar-item">Cheesecakes</a>
-            <a href="{{ url_for('macarons') }}" class="navbar-item">Macarons</a>
-            <a href="{{ url_for('desserts') }}" class="navbar-item">Desserts</a>
-            <a href="{{ url_for('contacts') }}" class="navbar-item">Contacts</a>
-        </div>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.png')}}" />
+    {% assets "css_all" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+</head>
 
-        <div class="body-content">
-            {% block content %}
-            {% endblock %}
-            <hr/>
-            <footer>
-                <p>© 2020</p>
-            </footer>
+<body class="animsition">
+
+    <!-- Header -->
+    <header class="header1">
+        <!-- Header desktop -->
+        <div class="container-menu-header">
+            <div class="wrap_header">
+                <!-- Logo -->
+                <a href="{{ url_for('home') }}" class="logo">
+                    <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
+                </a>
+
+                <!-- Menu -->
+                <div class="wrap_menu">
+                    <nav class="menu">
+                        <ul class="main_menu">
+                            <li>
+                                <a href="{{ url_for('cakes') }}">Торты</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('macarons') }}">Макарон</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('desserts') }}">Десерты</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('contacts') }}">Контакты</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('delivery') }}">Доставка</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-    </body>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+        <div class="t-center p-l-15 p-r-15">
+            <h4 class="t-center s-text12 p-b-5">
+                GET IN TOUCH
+            </h4>
+
+            <div class="t-center s-text8 p-t-5">
+                Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on
+                (+1)
+                96 716 6879
+            </div>
+
+            <!--<div class="t-center p-t-10">
+                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
+                <a href="{{ url_for('home') }}" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
+            </div>-->
+
+            <div class="t-center s-text8 p-t-30">
+                Copyright © 2020 All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    {% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <script type="text/javascript">
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect2')
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.btn-addcart-product-detail').each(function () {
+            var nameProduct = $('.product-detail-name').html();
+            $(this).on('click', function () {
+                var count = document.getElementById('count').value;
+                var currentPrice = document.getElementById("price").innerHTML;
+                currentPrice = currentPrice.replace('$', '');
+                document.getElementById("price").innerHTML = '$' + Number(currentPrice) * count;
+            });
+        });
+    </script>
+    </div>
+</body>
+
 </html>
