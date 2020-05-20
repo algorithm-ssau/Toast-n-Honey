@@ -12,50 +12,54 @@
 </head>
 
 <body class="animsition">
+    <div id="content">
+        <!-- Header -->
+        <header class="header1">
+            <!-- Header desktop -->
+            <div class="container-menu-header">
+                <div class="wrap_header">
+                    <!-- Logo -->
+                    <a href="{{ url_for('home') }}" class="logo">
+                        <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
+                    </a>
 
-    <!-- Header -->
-    <header class="header1">
-        <!-- Header desktop -->
-        <div class="container-menu-header">
-            <div class="wrap_header">
-                <!-- Logo -->
-                <a href="{{ url_for('home') }}" class="logo">
-                    <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
-                </a>
-
-                <!-- Menu -->
-                <div class="wrap_menu">
-                    <nav class="menu">
-                        <ul class="main_menu">
-                            <li>
-                                <a href="{{ url_for('cakes') }}">Торты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('macarons') }}">Макарон</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('desserts') }}">Десерты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('contacts') }}">Контакты</a>
-                            </li>
-                            <li>
-                                <a href="{{ url_for('delivery') }}">Доставка</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <!-- Menu -->
+                    <div class="wrap_menu">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                <li>
+                                    {% if 'Торты' == title %}
+                                        <a href="{{ url_for('cakes') }}"><div class="current-page">Торты</div></a>
+                                    {% else %}
+                                        <a href="{{ url_for('cakes') }}">Торты</a>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('macarons') }}">Макарон</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('desserts') }}">Десерты</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('contacts') }}">Контакты</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('delivery') }}">Доставка</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-    {% block content %}{% endblock %}
+        </header>
+        {% block content %}{% endblock %}
+    </div>
 
     <!-- Footer -->
-    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+    <footer id="footer" class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
         <div class="t-center p-l-15 p-r-15">
             <h4 class="t-center s-text12 p-b-5">
                 GET IN TOUCH
@@ -77,6 +81,7 @@
             </div>
         </div>
     </footer>
+    </div>
 
     {% assets "js_all" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
@@ -84,20 +89,21 @@
     <script type="text/javascript">
         $(".selection-2").select2({
             minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect2')
+            dropdownParent: $("#dropDownSelect2"),
         });
     </script>
 
     <script type="text/javascript">
-        $('.btn-addcart-product-detail').each(function () {
-            var nameProduct = $('.product-detail-name').html();
-            $(this).on('click', function () {
-                var count = document.getElementById('count').value;
-                var currentPrice = document.getElementById("price").innerHTML;
-                currentPrice = currentPrice.replace('$', '');
-                document.getElementById("price").innerHTML = '$' + Number(currentPrice) * count;
-            });
-        });
+        function setPrice() {
+            var x = document.getElementById("select-2").value;
+            var xx = x.split(" ");
+            price = xx[3];
+            if (typeof price == 'undefined') {
+                document.getElementById("price").innerHTML = " - ";
+            } else {
+                document.getElementById("price").innerHTML =  price + " ₽";
+            }
+        }
     </script>
     </div>
 </body>
