@@ -40,6 +40,17 @@ def delivery():
     return render_template("delivery.html")
 
 
-@app.route("/details/")
-def details():
-    return render_template("details.html")
+@app.route("/details/<int:id>")
+def details(id):
+    product = Products.query.filter(Products.id == id).first_or_404()
+    return render_template("details.html", product=product)
+
+
+@app.errorhandler(404)
+def product_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def product_not_found(e):
+    return render_template('404.html'), 500
