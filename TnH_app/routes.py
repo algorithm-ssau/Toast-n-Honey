@@ -20,8 +20,8 @@ def cheesecakes():
 
 @app.route("/cakes/")
 def cakes():
-    idCakes = Products.query.filter(Products.typeId == 1).all()
-    return render_template("cakes.html", filedirectory=idCakes[1].photo)
+    cakes = Products.query.filter(Products.typeId == 1).all()
+    return render_template("cakes.html", cakes = cakes)
 
 
 @app.route("/macarons/")
