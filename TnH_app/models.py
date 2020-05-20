@@ -23,7 +23,7 @@ class Options(db.Model):
     weight = db.Column(db.Integer)
     amount = db.Column(db.Integer)
 
-    orders = db.relationship('orders', backref='options', lazy=True)
+    orders = db.relationship('Orders', backref='options', lazy=False)
 
     def __init__(self, ProductId, Price, Weight, Amount):
         self.ProductId = ProductId
@@ -41,7 +41,7 @@ class Customers(db.Model):
     Phone = db.Column(db.NVARCHAR(10), nullable=False)
     Email = db.Column(db.NVARCHAR(100))
 
-    orders = db.relationship('orders', backref='customers', lazy=True)
+    orders = db.relationship('Orders', backref='customers', lazy=False)
 
     def __init__(self, Name, Phone, Email):
         self.Name = Name
@@ -59,8 +59,8 @@ class Products(db.Model):
     description = db.Column(db.NVARCHAR(500), nullable=True)
     photo = db.Column(db.NVARCHAR(100), nullable=True)
 
-    options = db.relationship('options', backref='products', lazy=True)
-    orders = db.relationship('orders', backref='products', lazy=True)
+    options = db.relationship('Options', backref='products', lazy=False)
+    orders = db.relationship('Orders', backref='products', lazy=False)
 
     def __init__(self, TypeId, Name, Description, Photo):
         self.TypeId = TypeId
@@ -76,7 +76,7 @@ class Types(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.NVARCHAR(100), nullable=False)
 
-    products = db.relationship('products', backref='types', lazy=True)
+    products = db.relationship('Products', backref='types', lazy=False)
 
     def __init__(self, Title):
         self.Title = Title

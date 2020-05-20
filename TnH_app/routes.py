@@ -1,6 +1,6 @@
 from flask import render_template
-
-from . import app
+from TnH_app import app
+from TnH_app.models import *
 
 
 @app.route("/")
@@ -20,7 +20,8 @@ def cheesecakes():
 
 @app.route("/cakes/")
 def cakes():
-    return render_template("cakes.html")
+    cakes = Products.query.filter(Products.typeId == 1).all()
+    return render_template("cakes.html", cakes=cakes)
 
 
 @app.route("/macarons/")
