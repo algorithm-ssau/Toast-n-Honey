@@ -32,9 +32,8 @@ def macarons():
 
 @app.route("/desserts/")
 def desserts():
-     desserts = Products.query.filter(Products.typeId == 4).all()
-    return render_template("desserts.html", desserts = desserts)
-
+    desserts = Products.query.filter(Products.typeId == 4).all()
+    return render_template("desserts.html", desserts=desserts)
 
 @app.route("/delivery/")
 def delivery():
