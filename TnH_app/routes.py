@@ -16,25 +16,26 @@ def contacts():
 @app.route("/cheesecakes/")
 def cheesecakes():
     cheesecakes = Products.query.filter(Products.typeId == 2).all()
-    return render_template("cheesecakes.html", cheesecakes=cheesecakes)
+    return render_template("products.html", title='Чизкейки', products=cheesecakes)
 
 
 @app.route("/cakes/")
 def cakes():
     cakes = Products.query.filter(Products.typeId == 1).all()
-    return render_template("cakes.html", cakes=cakes)
+    return render_template("products.html", title='Торты', products=cakes)
 
 
 @app.route("/macarons/")
 def macarons():
     macarons = Products.query.filter(Products.typeId == 3).all()
-    return render_template("macarons.html", macarons=macarons)
+    return render_template("products.html", title='Макарон', products=macarons)
 
 
 @app.route("/desserts/")
 def desserts():
     desserts = Products.query.filter(Products.typeId == 4).all()
-    return render_template("desserts.html", desserts=desserts)
+    return render_template("products.html", title='Десерты', products=desserts)
+
 
 @app.route("/delivery/")
 def delivery():
@@ -44,7 +45,7 @@ def delivery():
 @app.route("/details/<int:id>")
 def details(id):
     product = Products.query.filter(Products.id == id).first_or_404()
-    return render_template("details.html", product=product)
+    return render_template("details.html", title='', product=product)
 
 
 @app.errorhandler(404)

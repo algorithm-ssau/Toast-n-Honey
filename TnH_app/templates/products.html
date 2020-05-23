@@ -1,40 +1,32 @@
-{% extends "products_layout.html" %}
-{% block products_title1 %}
-Макарон
-{% endblock %}
-{% block products_title2 %}
-Макарон
-{% endblock %}
-{% block products_content %}
-<!-- Content page -->
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
 <section class="bgwhite p-t-65 p-b-65 flex-col-c-m">
     <div class="container">
-        <!-- Products -->
         <div class="row">
-            {% for macaron in macarons %}
+            {% for product in products %}
             <div class="col-md-6 col-lg-3 p-b-50">
-                <!-- Block2 -->
                 <div class="block2">
                     <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                        <img src="{{ url_for('static', filename= macaron.photo)}}" alt="IMG-PRODUCT">
+                        <img src="{{ url_for('static', filename= product.photo)}}" alt="IMG-PRODUCT" />
 
                         <div class="block2-overlay trans-0-4">
                             <div class="block2-btn-addcart w-size1 trans-0-4">
-                                <!-- Button -->
                                 <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                    <a href="{{ url_for('details', id = macaron.id ) }}" style="color: white;">Подробнее</a>
+                                    <a href="{{ url_for('details', id = product.id ) }}"
+                                        style="color: white;">Подробнее</a>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="block2-txt p-t-20">
-                        <a href="{{ url_for('home') }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
-                            {{ macaron.name }}
+                        <a href="{{ url_for('details', id = product.id ) }}" target="_blank" class="block2-name dis-block s-text3 p-b-5">
+                            {{ product.name }}
                         </a>
 
                         <span class="block2-price m-text6 p-r-5">
-                            {{ macaron.options[0].price }}₽  /  {{ macaron.options[0].amount }}
+                            {{ product.options[0].price }}₽ / {% if product.options[0].weight is none %} {{ product.options[0].amount }} {% else %} {{ product.options[0].weight }} {% endif %}
                         </span>
                     </div>
                 </div>
