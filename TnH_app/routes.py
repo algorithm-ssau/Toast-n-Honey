@@ -15,7 +15,8 @@ def contacts():
 
 @app.route("/cheesecakes/")
 def cheesecakes():
-    return render_template("cheesecakes.html")
+    cheesecakes = Products.query.filter(Products.typeId == 2).all()
+    return render_template("cheesecakes.html", cheesecakes=cheesecakes)
 
 
 @app.route("/cakes/")
