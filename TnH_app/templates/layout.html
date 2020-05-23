@@ -29,25 +29,45 @@
                             <ul class="main_menu">
                                 <li>
                                     {% if 'Торты' == title %}
-                                        <a href="{{ url_for('cakes') }}"><div class="current-page">Торты</div></a>
+                                        <a class="menu-item-active" href="{{ url_for('cakes') }}">{{title}}</a>
                                     {% else %}
-                                        <a href="{{ url_for('cakes') }}">Торты</a>
+                                        <a class="menu-item" href="{{ url_for('cakes') }}">Торты</a>
                                     {% endif %}
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                                    {% if 'Чизкейки' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('cheesecakes') }}">{{title}}</a>
+                                    {% else %}
+                                        <a class="menu-item" href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                                    {% endif %}
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('macarons') }}">Макарон</a>
+                                    {% if 'Макарон' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('macarons') }}">{{title}}</a>
+                                    {% else %}
+                                        <a class="menu-item" href="{{ url_for('macarons') }}">Макарон</a>
+                                    {% endif %}
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('desserts') }}">Десерты</a>
+                                    {% if 'Десерты' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('desserts') }}">{{title}}</a>
+                                    {% else %}
+                                        <a class="menu-item" href="{{ url_for('desserts') }}">Десерты</a>
+                                    {% endif %}
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('contacts') }}">Контакты</a>
+                                    {% if 'Контакты' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('contacts') }}">Контакты</a>
+                                    {% else %}
+                                        <a class="menu-item" href="{{ url_for('contacts') }}">Контакты</a>
+                                    {% endif %}
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('delivery') }}">Доставка</a>
+                                    {% if 'Доставка' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('delivery') }}">Доставка</a>
+                                    {% else %}
+                                        <a class="menu-item" href="{{ url_for('delivery') }}">Доставка</a>
+                                    {% endif %}
                                 </li>
                             </ul>
                         </nav>
