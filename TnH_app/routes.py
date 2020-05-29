@@ -10,7 +10,7 @@ def home():
 
 @app.route("/contacts/")
 def contacts():
-    return render_template("contacts.html", title='Контакты')
+    return render_template("contacts.html", title='О нас')
 
 
 @app.route("/cheesecakes/")
@@ -39,7 +39,7 @@ def desserts():
 
 @app.route("/delivery/")
 def delivery():
-    return render_template("delivery.html", title='Доставка')
+    return render_template("delivery.html", title='Как заказать')
 
 
 @app.route("/details/<int:id>")

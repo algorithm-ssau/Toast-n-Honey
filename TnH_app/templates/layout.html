@@ -56,17 +56,17 @@
                                     {% endif %}
                                 </li>
                                 <li>
-                                    {% if 'Контакты' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('contacts') }}">Контакты</a>
+                                    {% if 'Как заказать' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('delivery') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('contacts') }}">Контакты</a>
+                                        <a class="menu-item" href="{{ url_for('delivery') }}">Как заказать</a>
                                     {% endif %}
                                 </li>
                                 <li>
-                                    {% if 'Доставка' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('delivery') }}">Доставка</a>
+                                    {% if 'Контакты' == title %}
+                                        <a class="menu-item-active" href="{{ url_for('contacts') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('delivery') }}">Доставка</a>
+                                        <a class="menu-item" href="{{ url_for('contacts') }}">О нас</a>
                                     {% endif %}
                                 </li>
                             </ul>
