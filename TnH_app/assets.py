@@ -27,6 +27,7 @@ def compile_assets(assets):
                  'vendor/select2/select2.min.css',
                  'vendor/daterangepicker/daterangepicker.css',
                  'vendor/slick/slick.css',
+                 'vendor/css-hamburgers/hamburgers.min.css',
                  'vendor/lightbox2/css/lightbox.min.css',
                  'css/util.css',
                  'css/main.css',

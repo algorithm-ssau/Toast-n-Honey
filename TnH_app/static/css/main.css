@@ -998,7 +998,6 @@ li.sale-noti>a {
 
 /*[ Header Mobile ]
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
 .wrap_header_mobile {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1018,18 +1017,16 @@ li.sale-noti>a {
 
 /*[ Logo mobile ]
 -----------------------------------------------------------*/
-
 .logo-mobile {
   display: block;
 }
 
 .logo-mobile img {
-  max-height: 27px;
+  max-height: 60px;
 }
 
 /*[ btn show menu ]
 -----------------------------------------------------------*/
-
 .btn-show-menu {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1050,9 +1047,9 @@ li.sale-noti>a {
   margin-top: 5px;
 }
 
+
 /*[ Header icon mobile ]
 -----------------------------------------------------------*/
-
 .header-icons-mobile {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1062,7 +1059,6 @@ li.sale-noti>a {
   align-items: center;
   margin-right: 15px;
 }
-
 .linedivide2 {
   display: block;
   height: 20px;
@@ -1082,7 +1078,6 @@ li.sale-noti>a {
 
 /*[ Menu mobile ]
 -----------------------------------------------------------*/
-
 .wrap-side-menu {
   width: 100%;
   background-color: white;
@@ -1098,15 +1093,17 @@ li.sale-noti>a {
   list-style-type: none;
 }
 
-.side-menu .main-menu {
-  margin-bottom: 0;
-}
+.side-menu .main-menu {margin-bottom: 0;}
 
 .item-menu-mobile {
+  background-color: white;
+}
+
+.item-menu-mobile-active {
   background-color: #e897b0;
 }
 
-.side-menu .main-menu>li>a {
+.a-active {
   padding-left: 20px;
   font-family: Montserrat-Regular;
   font-size: 15px;
@@ -1114,7 +1111,15 @@ li.sale-noti>a {
   line-height: 2.86;
 }
 
-.side-menu .main-menu>li {
+.a-inactive {
+  padding-left: 20px;
+  font-family: Montserrat-Regular;
+  font-size: 15px;
+  color: #333333;
+  line-height: 2.86;
+}
+
+.side-menu .main-menu > li {
   color: white;
   position: relative;
 }
@@ -1151,7 +1156,7 @@ li.sale-noti>a {
   line-height: 2.5;
 }
 
-.side-menu .sub-menu>li {
+.side-menu .sub-menu > li {
   padding-left: 12px;
   padding-top:
 }
@@ -1159,7 +1164,7 @@ li.sale-noti>a {
 .side-menu .sub-menu a:hover {
   text-decoration: none;
   padding-left: 20px;
-  color: #e897b0 !important;
+  color: white !important;
 }
 
 .side-menu .sub-menu {
@@ -1167,14 +1172,13 @@ li.sale-noti>a {
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px){
   .wrap-side-menu {
     display: none;
   }
 }
 
 /* ------------------------------------ */
-
 .item-topbar-mobile {
   border-bottom: 1px solid #ececec;
 }

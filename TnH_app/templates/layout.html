@@ -29,46 +29,135 @@
                             <ul class="main_menu">
                                 <li>
                                     {% if 'Торты' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('cakes') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('cakes') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('cakes') }}">Торты</a>
+                                    <a class="menu-item" href="{{ url_for('cakes') }}">Торты</a>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if 'Чизкейки' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('cheesecakes') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('cheesecakes') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                                    <a class="menu-item" href="{{ url_for('cheesecakes') }}">Чизкейки</a>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if 'Макарон' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('macarons') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('macarons') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('macarons') }}">Макарон</a>
+                                    <a class="menu-item" href="{{ url_for('macarons') }}">Макарон</a>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if 'Десерты' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('desserts') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('desserts') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('desserts') }}">Десерты</a>
+                                    <a class="menu-item" href="{{ url_for('desserts') }}">Десерты</a>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if 'Как заказать' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('delivery') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('delivery') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('delivery') }}">Как заказать</a>
+                                    <a class="menu-item" href="{{ url_for('delivery') }}">Как заказать</a>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if 'Контакты' == title %}
-                                        <a class="menu-item-active" href="{{ url_for('contacts') }}">{{title}}</a>
+                                    <a class="menu-item-active" href="{{ url_for('contacts') }}">{{title}}</a>
                                     {% else %}
-                                        <a class="menu-item" href="{{ url_for('contacts') }}">О нас</a>
+                                    <a class="menu-item" href="{{ url_for('contacts') }}">О нас</a>
                                     {% endif %}
                                 </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="wrap_header_mobile">
+                <!-- Logo moblie -->
+                <a href="{{ url_for('home') }}" class="logo-mobile">
+                    <img src="{{ url_for('static', filename='images/icons/logo.png')}}" alt="IMG-LOGO">
+                </a>
+
+                <!-- Button show menu -->
+                <div class="btn-show-menu">
+                    {% if 'Toast And Honey' == title %}
+                    <div class="btn-show-menu-mobile hamburger hamburger--squeeze is-active">
+                        {% else %}
+                        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                            {% endif %}
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Mobile -->
+                {% if 'Toast And Honey' == title %}
+                <div class="wrap-side-menu" style="display: block;">
+                    {% else %}
+                    <div class="wrap-side-menu">
+                        {% endif %}
+                        <nav class="side-menu">
+                            <ul class="main-menu">
+                                {% if 'Торты' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('cakes') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('cakes') }}">Торты</a>
+                                </li>
+                                {% endif %}
+                                {% if 'Чизкейки' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('cheesecakes') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('cheesecakes') }}">Чизкейки</a>
+                                </li>
+                                {% endif %}
+                                {% if 'Макарон' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('cheesecakes') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('macarons') }}">Макарон</a>
+                                </li>
+                                {% endif %}
+                                {% if 'Десерты' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('desserts') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('desserts') }}">Десерты</a>
+                                </li>
+                                {% endif %}
+                                {% if 'Как заказать' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('delivery') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('delivery') }}">Как заказать</a>
+                                </li>
+                                {% endif %}
+                                {% if 'О нас' == title %}
+                                <li class="item-menu-mobile-active">
+                                    <a class="a-active" href="{{ url_for('contacts') }}">{{title}}</a>
+                                </li>
+                                {% else %}
+                                <li class="item-menu-mobile">
+                                    <a class="a-inactive" href="{{ url_for('contacts') }}">О нас</a>
+                                </li>
+                                {% endif %}
                             </ul>
                         </nav>
                     </div>
@@ -86,7 +175,8 @@
             </h4>
 
             <div class="t-center s-text8 p-t-5">
-                Возникли вопросы? Напишите нам в Whatsapp/Viber +7 (927) 903-11-37 или в Instagram Direct <a href="https://www.instagram.com/toast.n.honey">@toast.n.honey</a>
+                Возникли вопросы? Напишите нам в <a href="https://wa.me/79279031137">Whatsapp +7 (927) 903-11-37</a> или
+                в <a href="https://www.instagram.com/toast.n.honey">Instagram</a>
             </div>
 
             <!--<div class="t-center p-t-10">
@@ -119,7 +209,7 @@
             if (typeof price == 'undefined') {
                 document.getElementById("price").innerHTML = " - ";
             } else {
-                document.getElementById("price").innerHTML =  price + " ₽";
+                document.getElementById("price").innerHTML = price + " ₽";
             }
         }
     </script>
