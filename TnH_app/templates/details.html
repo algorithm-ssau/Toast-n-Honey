@@ -8,9 +8,9 @@
 				<div class="wrap-slick3-dots"></div>
 
 				<div class="slick3">
-					<div class="item-slick3" data-thumb="{{ url_for('static', filename='images/thumb-item-01.jpg')}}">
+					<div class="item-slick3" data-thumb="{{ url_for('static', filename=product.photo)}}">
 						<div class="wrap-pic-w">
-							<img src="{{ url_for('static', filename='images/product-detail-01.jpg')}}"
+							<img src="{{ url_for('static', filename=product.photo)}}"
 								alt="IMG-PRODUCT" />
 						</div>
 					</div>
@@ -18,13 +18,6 @@
 					<div class="item-slick3" data-thumb="{{ url_for('static', filename='images/thumb-item-02.jpg')}}">
 						<div class="wrap-pic-w">
 							<img src="{{ url_for('static', filename='images/product-detail-02.jpg')}}"
-								alt="IMG-PRODUCT" />
-						</div>
-					</div>
-
-					<div class="item-slick3" data-thumb="{{ url_for('static', filename='images/thumb-item-03.jpg')}}">
-						<div class="wrap-pic-w">
-							<img src="{{ url_for('static', filename='images/product-detail-03.jpg')}}"
 								alt="IMG-PRODUCT" />
 						</div>
 					</div>
@@ -38,14 +31,13 @@
 			</h4>
 
 			<p class="s-text8 p-t-10">
-				{{product.description}}
+				{{product.description | safe}}
 			</p>
 
 			<div class="p-t-33 p-b-60">
 				<div class="flex-m flex-w p-b-10">
 					<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
 						<select id="select-2" class="selection-2" name="size" onchange="setPrice()">
-							<option> - </option>
 							{% for option in product.options %}
 							{% if option.weight is none %}
 							<option>{{option.amount}} - {{option.price}} ₽</option>
@@ -61,7 +53,7 @@
 					<p class="flex-m m-text16 p-l-10">Итого: </p>
 
 					<span id="price" class="flex-m m-text16 p-l-20">
-
+						{{product.options[0].price}} ₽
 					</span>
 				</div>
 			</div>
