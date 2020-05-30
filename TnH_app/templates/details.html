@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %} О продукте {% endblock %}
+{% block content %}
+<div class="container bgwhite p-t-35 p-b-80">
+	<div class="flex-w flex-sb">
+		<div class="w-size13 p-t-30 respon5">
+			<div class="wrap-slick3 flex-sb flex-w">
+				<div class="wrap-slick3-dots"></div>
+
+				<div class="slick3">
+					<div class="item-slick3" data-thumb="{{ url_for('static', filename=product.photo)}}">
+						<div class="wrap-pic-w">
+							<img src="{{ url_for('static', filename=product.photo)}}" alt="IMG-PRODUCT" />
+						</div>
+					</div>
+
+					<div class="item-slick3"
+						data-thumb="{{ url_for('static', filename=product.photo.replace('.jpg','-1.jpg'))}}">
+						<div class="wrap-pic-w">
+							<img src="{{ url_for('static', filename=product.photo.replace('.jpg','-1.jpg'))}}"
+								alt="IMG-PRODUCT" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="w-size14 p-t-30 p-l-20 respon5">
+			<h4 class="product-detail-name m-text16 p-b-13 p-l-20">
+				{{product.name}}
+			</h4>
+
+			<p class="s-text8 p-t-10 p-l-20">
+				{{product.description | safe}}
+			</p>
+
+			<div class="p-t-33 p-b-60 p-l-20">
+				<div class="flex-m flex-w p-b-10">
+					<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+						<select id="select-2" class="selection-2" name="size" onchange="setPrice()">
+							{% for option in product.options %}
+							{% if option.weight is none %}
+							<option>{{option.amount}} - {{option.price}} ₽</option>
+							{% else %}
+							<option>{{option.weight}} - {{option.price}} ₽</option>
+							{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="flex-r-r flex-w p-t-10">
+					<p class="flex-m m-text16 p-l-10">Итого: </p>
+
+					<span id="price" class="flex-m m-text16 p-l-20">
+						{{product.options[0].price}} ₽
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="dropDownSelect1"></div>
+<div id="dropDownSelect2"></div>
+{% endblock %}
