@@ -99,9 +99,9 @@
                 <!-- Menu Mobile -->
                 {% if 'Toast And Honey' == title %}
                 <div class="wrap-side-menu" style="display: block;">
-                    {% else %}
+                {% else %}
                     <div class="wrap-side-menu">
-                        {% endif %}
+                {% endif %}
                         <nav class="side-menu">
                             <ul class="main-menu">
                                 {% if 'Торты' == title %}
@@ -161,8 +161,6 @@
                             </ul>
                         </nav>
                     </div>
-                </div>
-            </div>
         </header>
         {% block content %}{% endblock %}
     </div>
