@@ -5,12 +5,12 @@ from TnH_app.models import *
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", title='Toast And Honey')
 
 
 @app.route("/contacts/")
 def contacts():
-    return render_template("contacts.html")
+    return render_template("contacts.html", title='О нас')
 
 
 @app.route("/cheesecakes/")
@@ -39,13 +39,13 @@ def desserts():
 
 @app.route("/delivery/")
 def delivery():
-    return render_template("delivery.html")
+    return render_template("delivery.html", title='Как заказать')
 
 
 @app.route("/details/<int:id>")
 def details(id):
     product = Products.query.filter(Products.id == id).first_or_404()
-    return render_template("details.html", title='', product=product)
+    return render_template("details.html", product=product)
 
 
 @app.errorhandler(404)
