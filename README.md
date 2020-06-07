@@ -6,6 +6,7 @@
 - Flask (Flask-SQLAlchemy, Flask-Migrate)
 - SQLite
 - HTML/CSS
+- Azure
 
 ## 🚀 Установка и запуск
 
